@@ -1,0 +1,34 @@
+
+<div class="container" style="margin-top: 5%;">
+    <h1>Buscar Empleados</h1>
+    <div class="form-group">
+      <input [(ngModel)]="empleadoId" class="form-control" placeholder="ID de Empleado">
+    </div>
+    <button (click)="buscarEmpleados()" class="btn btn-primary">Buscar</button>
+    <button (click)="mostrarTodosEmpleados()" class="btn btn-secondary" style="margin-left: 5%;">Mostrar Todos</button>
+  </div>
+  
+  <div class="container"><br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Salario Mensual</th>
+          <th>Salario Anual</th>
+          <th>Edad</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empleado of empleados">
+          <td>{{ empleado.id }}</td>
+          <td>{{ empleado.employee_name }}</td>
+          <td>{{ empleado.employee_salary | currency }}</td>
+          <td>{{ empleado.anualSalary | currency }}</td>
+          <td>{{ empleado.employee_age }}</td>
+          <td>{{ empleado.profile_image }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
